@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>engineering projects | Academic</title>
+    <link>https://lunaguo.github.io/tag/engineering-projects/</link>
+      <atom:link href="https://lunaguo.github.io/tag/engineering-projects/index.xml" rel="self" type="application/rss+xml" />
+    <description>engineering projects</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 27 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lunaguo.github.io/media/icon_hu0e3e30f7506044358229cb0bb8d4397c_11932_512x512_fill_lanczos_center_3.png</url>
+      <title>engineering projects</title>
+      <link>https://lunaguo.github.io/tag/engineering-projects/</link>
+    </image>
+    
+    <item>
+      <title>Optimization of environmentally adaptive BIPV modular building form</title>
+      <link>https://lunaguo.github.io/project/digitalfutures/</link>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/project/digitalfutures/</guid>
+      <description>&lt;p&gt;It is teamwork of 6 people, in which Mingyue Guo is the team leader. This project optimizes the form of the environmentally adaptive BIPV modular buildings, including the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simulate the PV power generation, building energy consumption, and the outdoor environmental index (wind speed and UTCI) of the parametrically generated BIPV building.&lt;/li&gt;
+&lt;li&gt;Train data-driving model with machine learning methods (light GBM, SVR, and ANN) using simulation data to quickly obtain building performance indexes.&lt;/li&gt;
+&lt;li&gt;Carry out the multi-objective optimization of building form by using the genetic algorithm.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A VAV control system for virtual terminals with Johnson control</title>
+      <link>https://lunaguo.github.io/project/vavcontrol/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/project/vavcontrol/</guid>
+      <description>&lt;p&gt;It is a task regarding a VAV control system with Johnson control in a team of 4 people. The project includes the following items:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simulate VAV system (including VAV boxes, coils, fans, mixing boxes, duct system) of two rooms by MATLAB.&lt;/li&gt;
+&lt;li&gt;Formulate control logic of VAV system using NCE controller offered by Jonson Control.&lt;/li&gt;
+&lt;li&gt;Connect NCE controller (hardware) and VAV system (virtual terminal) by Raspberry Pi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

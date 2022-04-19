@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>research projects | Academic</title>
+    <link>https://lunaguo.github.io/tag/research-projects/</link>
+      <atom:link href="https://lunaguo.github.io/tag/research-projects/index.xml" rel="self" type="application/rss+xml" />
+    <description>research projects</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 27 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lunaguo.github.io/media/icon_hu0e3e30f7506044358229cb0bb8d4397c_11932_512x512_fill_lanczos_center_3.png</url>
+      <title>research projects</title>
+      <link>https://lunaguo.github.io/tag/research-projects/</link>
+    </image>
+    
+    <item>
+      <title>Hybrid energy consumption prediction model for office buildings</title>
+      <link>https://lunaguo.github.io/project/hybrid-model/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/project/hybrid-model/</guid>
+      <description>&lt;p&gt;This is the project for the master&amp;rsquo;s degree. It includes the following three steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Extract key variables that affect the energy consumption of office buildings using sensitivity analysis
+methods.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integrate multi-source heterogeneous data of energy consumption including hourly data from metering
+systems, monthly data from electricity bills, and simulation data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Build a hybrid energy consumption prediction model using statistical and machine learning methods&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>BIM to BEM</title>
+      <link>https://lunaguo.github.io/project/bim2bem/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/project/bim2bem/</guid>
+      <description>&lt;p&gt;This research is included in the program of the 13th Five-Year Project of China – Research and development of key technologies for operation optimization of the green building based on BIM.&lt;/p&gt;
+&lt;p&gt;BIM to BEM part is featured  as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Check and modify the original BIM and the intermediate file (gbXML) to ensure the success of the BIM to BEM (Building Energy Modelling) transmission.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Convert BIM to BEM automatically based on gbXML.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enrich the BEM converted from BIM by using an external database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The biggest obstacle of transmitting BIM to BEM is the deviation of geometrical information. The main reasons for the unsuccessful conversion of BIM to BEM can be classified into two aspects: the error or deviation of information raised by the original BIM, the deviation of information between BIM and gbXML.&lt;/p&gt;
+&lt;p&gt;The proposed method is more robust and automatic. The BIM checker module checks and modifies the original BIM to reduce the deviation of information, the gbXML editor module simplifies and corrects the gbXML to make sure the success of conversion and quality of BEM, and IDF booster module checks the validity of information and adds essential information to BEM automatically. As tested, the complicated BIM which can’t be converted by GBS or other tools can be transformed to the reliable BEM through the proposed method.&lt;/p&gt;
+&lt;p&gt;The BIM checker module develops plug-ins of Revit which refine essential geometrical information, add or correct spatial information in BIM, and reconstruct the geometry in a thermal view. The BIM checker module and gbXML module ensure the quality of geometrical information and eliminate the obstacles of converting complex BIM to BEM.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stove Flue Gas Waste Heat Recovery Device</title>
+      <link>https://lunaguo.github.io/project/gas_economizer/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/project/gas_economizer/</guid>
+      <description>&lt;p&gt;The project is carried by a team of three students in which Mingyue Guo is the team leader. It is an undergraduate students’ innovation and entrepreneurship training program of Chongqing University. This project includes the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Design a gas to water heat exchanger and a collector that can collect flue gas of stove without impairing
+combustion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Measure and evaluate the performance of the heat exchanger through experiments.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Promote the performance of the device.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
