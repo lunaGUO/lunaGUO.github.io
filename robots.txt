@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://lunaguo.github.io/sitemap.xml
