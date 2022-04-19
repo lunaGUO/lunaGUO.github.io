@@ -1,0 +1,1162 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mingyue Guo" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="BIM向BEM转换软件采用模块化设计，包含四个主要模块（如图1，黄色部分表示模块，绿色部分表中间文件）。软件整体的输入模型为Revit中rvt项目文件（BIM），输出文件为常用的能耗模拟软件EnergyPlus（e&#43;）的输入文件IDF（BEM）。模块一：BIM checker在Revit的环境中运行，对原始的BIM模型进行简化、修改和填补信息，并将BIM转换为中间格式gbXML（Green Building XML）。模块二：gbXML editor将BIM直接转换的存在信息不规范的gbXML进行修改，输出修改后的gbXML。模块三：data converter将修改后的gbXML进行数据格式转换，输出能耗模拟引擎EnergyPlus的支持的格式IDF（Input Data File）。模块四：IDF checker将转换得到的IDF根据国家现行规范进行修改和补充，输出可直接用于能耗分析的IDF文件。" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://lunaguo.github.io/chinese_publication/bimtobemcopyright/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#bbdefb" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.1b0e116046af73d16142214bba82f8a5.css" />
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0e3e30f7506044358229cb0bb8d4397c_11932_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0e3e30f7506044358229cb0bb8d4397c_11932_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://lunaguo.github.io/chinese_publication/bimtobemcopyright/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Mingyue Guo" />
+  <meta property="og:url" content="https://lunaguo.github.io/chinese_publication/bimtobemcopyright/" />
+  <meta property="og:title" content="建筑信息模型向建筑能耗模型转换软件（BIMtoBEM） | Mingyue Guo" />
+  <meta property="og:description" content="BIM向BEM转换软件采用模块化设计，包含四个主要模块（如图1，黄色部分表示模块，绿色部分表中间文件）。软件整体的输入模型为Revit中rvt项目文件（BIM），输出文件为常用的能耗模拟软件EnergyPlus（e&#43;）的输入文件IDF（BEM）。模块一：BIM checker在Revit的环境中运行，对原始的BIM模型进行简化、修改和填补信息，并将BIM转换为中间格式gbXML（Green Building XML）。模块二：gbXML editor将BIM直接转换的存在信息不规范的gbXML进行修改，输出修改后的gbXML。模块三：data converter将修改后的gbXML进行数据格式转换，输出能耗模拟引擎EnergyPlus的支持的格式IDF（Input Data File）。模块四：IDF checker将转换得到的IDF根据国家现行规范进行修改和补充，输出可直接用于能耗分析的IDF文件。" /><meta property="og:image" content="https://lunaguo.github.io/chinese_publication/bimtobemcopyright/featured.jpg" />
+    <meta property="twitter:image" content="https://lunaguo.github.io/chinese_publication/bimtobemcopyright/featured.jpg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-03-11T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-10-11T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>建筑信息模型向建筑能耗模型转换软件（BIMtoBEM） | Mingyue Guo</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="4fdf763232ca5b829d74259e1393d4d2" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.d333d96014f7bcfa311294a92ace0d60.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Mingyue Guo</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Mingyue Guo</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#skills"><span>Skills</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>建筑信息模型向建筑能耗模型转换软件（BIMtoBEM）</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Mingyue Guo</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 11, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 638px; max-height: 868px;">
+  <div style="position: relative">
+    <img src="/chinese_publication/bimtobemcopyright/featured_hu1e9057048195d79c4fbb48799a54b6be_260062_720x2500_fit_q75_h2_lanczos.webp" width="638" height="868" alt="" class="featured-image">
+    <span class="article-header-caption">软件著作证书</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+    </div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://lunaguo.github.io/chinese_publication/bimtobemcopyright/&amp;text=%e5%bb%ba%e7%ad%91%e4%bf%a1%e6%81%af%e6%a8%a1%e5%9e%8b%e5%90%91%e5%bb%ba%e7%ad%91%e8%83%bd%e8%80%97%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e8%bd%af%e4%bb%b6%ef%bc%88BIMtoBEM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://lunaguo.github.io/chinese_publication/bimtobemcopyright/&amp;t=%e5%bb%ba%e7%ad%91%e4%bf%a1%e6%81%af%e6%a8%a1%e5%9e%8b%e5%90%91%e5%bb%ba%e7%ad%91%e8%83%bd%e8%80%97%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e8%bd%af%e4%bb%b6%ef%bc%88BIMtoBEM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e5%bb%ba%e7%ad%91%e4%bf%a1%e6%81%af%e6%a8%a1%e5%9e%8b%e5%90%91%e5%bb%ba%e7%ad%91%e8%83%bd%e8%80%97%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e8%bd%af%e4%bb%b6%ef%bc%88BIMtoBEM%ef%bc%89&amp;body=https://lunaguo.github.io/chinese_publication/bimtobemcopyright/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://lunaguo.github.io/chinese_publication/bimtobemcopyright/&amp;title=%e5%bb%ba%e7%ad%91%e4%bf%a1%e6%81%af%e6%a8%a1%e5%9e%8b%e5%90%91%e5%bb%ba%e7%ad%91%e8%83%bd%e8%80%97%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e8%bd%af%e4%bb%b6%ef%bc%88BIMtoBEM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%e5%bb%ba%e7%ad%91%e4%bf%a1%e6%81%af%e6%a8%a1%e5%9e%8b%e5%90%91%e5%bb%ba%e7%ad%91%e8%83%bd%e8%80%97%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e8%bd%af%e4%bb%b6%ef%bc%88BIMtoBEM%ef%bc%89%20https://lunaguo.github.io/chinese_publication/bimtobemcopyright/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://lunaguo.github.io/chinese_publication/bimtobemcopyright/&amp;title=%e5%bb%ba%e7%ad%91%e4%bf%a1%e6%81%af%e6%a8%a1%e5%9e%8b%e5%90%91%e5%bb%ba%e7%ad%91%e8%83%bd%e8%80%97%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e8%bd%af%e4%bb%b6%ef%bc%88BIMtoBEM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://lunaguo.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu2501f6b7cfd1a8a96ec49555dde85758_1480061_270x270_fill_q75_lanczos_center.jpg" alt="Mingyue Guo"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://lunaguo.github.io/">Mingyue Guo</a></h5>
+      <h6 class="card-subtitle">Innovative, Committed, Cooperative</h6>
+      <p class="card-text">My research interests include building energy modelling, building information modelling and data analytics.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/Guo-Mingyue-3" target="_blank" rel="noopener">
+        <i class="ai ai-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=TzVFCFoAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/lunaGUO" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mingyue-guo-b27138213/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.0f6c8d031cf75ceb9fe18f4ae0f88a65.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.8342f4936d296f9f684e00c7943ee35b.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.ee00aa4e09ee62617fe2dc15bfcb3f7b.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>

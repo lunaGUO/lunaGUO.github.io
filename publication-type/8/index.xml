@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>8 | Mingyue Guo</title>
+    <link>https://lunaguo.github.io/publication-type/8/</link>
+      <atom:link href="https://lunaguo.github.io/publication-type/8/index.xml" rel="self" type="application/rss+xml" />
+    <description>8</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © 2022 Mingyue Guo</copyright><lastBuildDate>Sun, 11 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lunaguo.github.io/media/icon_hu0e3e30f7506044358229cb0bb8d4397c_11932_512x512_fill_lanczos_center_3.png</url>
+      <title>8</title>
+      <link>https://lunaguo.github.io/publication-type/8/</link>
+    </image>
+    
+    <item>
+      <title>一种用于火锅店的燃气灶烟气热回收装置</title>
+      <link>https://lunaguo.github.io/chinese_publication/heatrecovery/</link>
+      <pubDate>Sun, 11 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/chinese_publication/heatrecovery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>基于BIM的能耗模拟软件功能的测评分析</title>
+      <link>https://lunaguo.github.io/chinese_publication/bim/</link>
+      <pubDate>Sun, 11 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/chinese_publication/bim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>应对新型冠状病毒国内外暖通相关指南对比</title>
+      <link>https://lunaguo.github.io/chinese_publication/covid19/</link>
+      <pubDate>Sun, 11 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/chinese_publication/covid19/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
