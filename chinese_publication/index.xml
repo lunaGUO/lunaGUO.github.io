@@ -5,12 +5,20 @@
     <link>https://lunaguo.github.io/chinese_publication/</link>
       <atom:link href="https://lunaguo.github.io/chinese_publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publication in Chinese</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © 2022 Mingyue Guo</copyright><lastBuildDate>Sun, 11 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Copyright © 2022 Mingyue Guo</copyright><lastBuildDate>Tue, 09 Aug 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://lunaguo.github.io/media/icon_hu0e3e30f7506044358229cb0bb8d4397c_11932_512x512_fill_lanczos_center_3.png</url>
       <title>Publication in Chinese</title>
       <link>https://lunaguo.github.io/chinese_publication/</link>
     </image>
+    
+    <item>
+      <title>一种管道井寻优算法</title>
+      <link>https://lunaguo.github.io/chinese_publication/pipeline/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://lunaguo.github.io/chinese_publication/pipeline/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>一种用于火锅店的燃气灶烟气热回收装置</title>
