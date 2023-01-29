@@ -117,20 +117,6 @@ systems, monthly data from electricity bills, and simulation data.&lt;/p&gt;
     </item>
     
     <item>
-      <title>A VAV control system for virtual terminals with Johnson control</title>
-      <link>https://lunaguo.github.io/project/vavcontrol/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://lunaguo.github.io/project/vavcontrol/</guid>
-      <description>&lt;p&gt;It is a task regarding a VAV control system with Johnson control in a team of 4 people. The project includes the following items:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Simulate VAV system (including VAV boxes, coils, fans, mixing boxes, duct system) of two rooms by MATLAB.&lt;/li&gt;
-&lt;li&gt;Formulate control logic of VAV system using NCE controller offered by Jonson Control.&lt;/li&gt;
-&lt;li&gt;Connect NCE controller (hardware) and VAV system (virtual terminal) by Raspberry Pi.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>BIM to BEM</title>
       <link>https://lunaguo.github.io/project/bim2bem/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
@@ -309,14 +295,6 @@ combustion.&lt;/p&gt;
       <link>https://lunaguo.github.io/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://lunaguo.github.io/admin/config.yml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Building energy modelling based on building information modelling: the remaining problems and a more robust method</title>
-      <link>https://lunaguo.github.io/publication/bimtobem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lunaguo.github.io/publication/bimtobem/</guid>
       <description></description>
     </item>
     
